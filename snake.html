@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-title">Snake Game</div>
+        <div class="game-description">Use arrow keys to control the snake and eat the red squares to grow.</div>
+        <canvas id="gameCanvas" width="300" height="300"></canvas>
+        <div id="score">Score: 0</div>
+        <button id="start-button">Start Game</button>
+        <a href="highscores.html" id="highscore-button">View Highscores</a>
+
+
+        <div id="game-over">Game Over</div>
+        <input type="text" id="username-input" placeholder="Enter your username">
+        <button id="submit-button">Submit Username</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

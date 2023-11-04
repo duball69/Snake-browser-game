@@ -1,0 +1,74 @@
+body {
+    background-color: #111; /* Dark background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Use the Roboto font */
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Box shadow for a futuristic effect */
+    text-align: center;
+    position: relative; /* Add this to make positioning children relative to the container */
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ff5500; /* Orange button background color */
+    color: #111; /* Dark text color on the button */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline on the link */
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+.back-button:hover {
+    background-color: #ff9900; /* Lighter orange on hover */
+}
+
+
+.container h1 {
+    font-size: 36px;
+    color: #ff5500; /* Orange title color */
+}
+
+.highscore-table {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.highscore-table table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.highscore-table th, .highscore-table td {
+    padding: 10px;
+    color: #fff; /* White text color */
+}
+
+.highscore-table th {
+    background-color: #ff5500; /* Orange header background color */
+}
+
+.highscore-table tr:nth-child(even) {
+    background-color: rgba(255, 85, 0, 0.3); /* Alternate row background color */
+}
+
+.highscore-table tr:nth-child(odd) {
+    background-color: rgba(255, 85, 0, 0.2); /* Alternate row background color */
+}
