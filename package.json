@@ -1,0 +1,20 @@
+{
+    "name": "snake-game-on-browser",
+    "version": "1.0.0",
+    "description": "A simple snake game",
+    "main": "index.html",
+  "scripts": {
+    "start": "http-server -o -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duball69/Snake-browser-game"
+  },
+  "author": "Duball69",
+  "license": "MIT",
+  "dependencies": {
+    "any-javascript-library": "version",
+    "any-other-dependency": "version"
+  
+  }
+}
