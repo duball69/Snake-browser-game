@@ -2,7 +2,7 @@
     "name": "snake-game-on-browser",
     "version": "1.0.0",
     "description": "A simple snake game",
-    "main": "index.html",
+    "main": "snake.html",
   "scripts": {
     "start": "http-server -o -c-1"
   },
