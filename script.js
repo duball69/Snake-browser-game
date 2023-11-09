@@ -13,6 +13,15 @@ let direction = "right";
 let score = 0;
 let gameInterval;
 
+let specialFood = null;
+let specialFoodCountdown = 0;
+
+function generateSpecialFood() {
+    const specialFoodX = Math.floor(Math.random() * (canvas.width / boxSize));
+    const specialFoodY = Math.floor(Math.random() * (canvas.height / boxSize));
+    return { x: specialFoodX, y: specialFoodY };
+}
+
 function drawSnake() {
     snake.forEach(segment => {
         ctx.fillStyle = "green";
@@ -20,7 +29,7 @@ function drawSnake() {
     });
 }
 
-function drawFood() {
+function drawFood(food) {
     ctx.fillStyle = "red";
     ctx.fillRect(food.x * boxSize, food.y * boxSize, boxSize, boxSize);
 }
@@ -138,11 +147,48 @@ function updateHighscoresTable(highscores) {
     });
 }
 
+function drawSpecialFood() {
+    if (specialFood) {
+        ctx.fillStyle = "blue"; // Color for special food
+        ctx.fillRect(specialFood.x * boxSize, specialFood.y * boxSize, boxSize, boxSize);
+    }
+}
+
+function checkForSpecialFood() {
+    if (score % 50 === 0 && specialFood === null) {
+        specialFood = generateSpecialFood();
+        specialFoodCountdown = 100; // 100 game loops = 10 seconds
+    }
+}
+
+function moveSpecialFood() {
+    if (specialFoodCountdown > 0) {
+        specialFoodCountdown--;
+        if (specialFoodCountdown === 0) {
+            // Special food countdown is over, remove it
+            specialFood = null;
+        }
+    }
+}
+
+function handleSpecialFoodCollision() {
+    if (specialFood && snake[0].x === specialFood.x && snake[0].y === specialFood.y) {
+        specialFood = null;
+        score += 50; // Increase score for eating special food
+        scoreDisplay.textContent = `Score: ${score}`;
+    }
+}
+
 function gameLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    checkForSpecialFood(); // Check if special food should appear
+    moveSpecialFood(); // Countdown for special food
+    handleSpecialFoodCollision(); // Check if snake ate special food
+
+    drawSpecialFood(); // Draw special food
     drawSnake();
-    drawFood();
+    drawFood(food);
     moveSnake();
     checkCollision();
 }
@@ -164,3 +210,6 @@ function startGame() {
 
 document.addEventListener("keydown", preventArrowKeyDefault);
 document.addEventListener("keydown", changeDirection);
+
+// Start the game when the page loads
+startGame();

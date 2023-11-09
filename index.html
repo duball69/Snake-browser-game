@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake Game Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="game-title">Snake Game</h1>
+            <p class="game-description">Control the snake, eat to grow, and compete for the highest score!</p>
+            <a class="play-button" href="snake.html">Play Now</a>
+        </div>
+    </div>
+
+    <div class="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Classic Snake gameplay</li>
+            <li>Challenging levels and obstacles</li>
+            <li>Compete with other players in highscores</li>
+        </ul>
+    </div>
+
+    <div class="highscores">
+        <h2>Top Highscores</h2>
+        <table>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Score</th>
+            </tr>
+            <tbody id="highscore-table-body">
+                <!-- Highscore data goes here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="about">
+        <h2>About Us</h2>
+        <p>We are passionate game developers dedicated to bringing you the best gaming experience. Try our Snake game now and challenge your skills!</p>
+    </div>
+
+    <script src="highscores.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
